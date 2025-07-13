@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #c5f2c7;
+  font-family: 'Courier New', Courier, monospace;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.terminal {
+  background-color: #111;
+  padding: 30px;
+  border: 2px solid white; /* 👈 White border */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  color:white
+}
+
+
+.output {
+  white-space: pre-wrap;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.input-line {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#terminal-input {
+  background: none;
+  border: none;
+  color: #c5f2c7;
+  outline: none;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+}
+
