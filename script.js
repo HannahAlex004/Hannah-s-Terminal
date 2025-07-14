@@ -6,6 +6,7 @@ const commands = {
 - about
 - experience
 - projects
+- quote
 - contact
 - clear`,
 
@@ -40,6 +41,14 @@ GitHub: https://github.com/HannahAlex004
 LinkedIn: https://www.linkedin.com/in/hannah-alex-9203482b0/
 LeetCode: https://leetcode.com/u/AlexHannah/`
 ,
+quote: [
+  `"Talk is cheap. Show me the code." – Linus Torvalds`,
+  `"Code never lies, comments sometimes do." – Ron Jeffries`,
+  `"Programs must be written for people to read." – Harold Abelson`,
+  `"First, solve the problem. Then, write the code." – John Johnson`,
+  `"Good code is its own best documentation." – Steve McConnell`
+],
+
 
   clear: "__clear__"
 };
@@ -54,14 +63,17 @@ terminalInput.addEventListener("keydown", function (e) {
     terminalOutput.innerHTML += `\nhannah@desktop:~$ ${input}`;
 
     if (commands[input]) {
-      if (commands[input] === "__clear__") {
-        terminalOutput.innerHTML = "";
-      } else {
-        terminalOutput.innerHTML += `\n${commands[input]}`;
-      }
-    } else {
-      terminalOutput.innerHTML += `\nCommand not found: ${input}`;
-    }
+  if (commands[input] === "__clear__") {
+    terminalOutput.innerHTML = "";
+  } else if (input === "quote") {
+    const quotes = commands.quote;
+    const random = quotes[Math.floor(Math.random() * quotes.length)];
+    terminalOutput.innerHTML += `\n${random}`;
+  } else {
+    terminalOutput.innerHTML += `\n${commands[input]}`;
+  }
+}
+
 
     terminalOutput.scrollTop = terminalOutput.scrollHeight;
   }
